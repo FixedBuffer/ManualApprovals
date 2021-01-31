@@ -58,7 +58,7 @@ jobs:
     - name: Execute 
       run: dotnet ManualApproval.dll    
 
-  # This stage doens't need to use if because the previous stage applies it
+  # This stage doesn't need to use if because the previous stage applies it
   production:
     needs: development
     name: Deploy Production Environment
