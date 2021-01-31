@@ -6,10 +6,15 @@ namespace ManualApproval
     {
         static void Main(string[] args)
         {
-            var env = Environment.GetEnvironmentVariable("MyVal");
-            if(!string.IsNullOrWhiteSpace(env))
-                Console.WriteLine($"The value of MyVal is:{env}");
-            Console.WriteLine("MyVal is not defined");
+            var env = Environment.GetEnvironmentVariable("MYVAL");
+            int.TryParse(env, out var id);
+            var message = id switch
+            {
+                1 => "Development",
+                2 => "Production",
+                _ => "MYVAL is not defined"
+            };
+            Console.WriteLine(message);
         }
     }
 }
