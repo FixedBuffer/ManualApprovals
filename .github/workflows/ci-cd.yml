@@ -78,4 +78,4 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION}}
     - name: Execute 
-      run: dotnet ManualApproval.dll    
+      run: dotnet ManualApproval.dll
